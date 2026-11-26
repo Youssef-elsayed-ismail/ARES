@@ -1,0 +1,194 @@
+[
+ {
+  "id": "jezero",
+  "title": "Jezero Crater",
+  "tags": "jezero crater where place location mars site lake delta river water",
+  "text": "This is Jezero Crater, on Mars, just north of the equator. It is about 45 km wide. Around 3.5 billion years ago it held a lake, and a river built a delta on its western side. That is why your rover came here.",
+  "source": "NASA Mars 2020 mission",
+  "ask": "What is this crater?"
+ },
+ {
+  "id": "perseverance",
+  "title": "Perseverance rover",
+  "tags": "perseverance rover machine nasa landed landing mission when white dots drive drove path traverse",
+  "text": "The machine by my ship is Perseverance, NASA's rover. It landed here on 18 February 2021, at a spot named Octavia E. Butler Landing. The white dots on the map are where it really drove, sols {sol0} to {sol1}.",
+  "source": "NASA/JPL-Caltech, Mars 2020 localisation data",
+  "ask": "What are the white dots?"
+ },
+ {
+  "id": "mission",
+  "title": "Why the rover came",
+  "tags": "why mission goal purpose life search samples science astrobiology ancient microbes",
+  "text": "Perseverance looks for signs of ancient microbial life and collects rock samples that a later mission could bring to Earth. A dried-up lake with a river delta is one of the best places to look.",
+  "source": "NASA Mars 2020 mission",
+  "ask": "Why did the rover come here?"
+ },
+ {
+  "id": "seitah",
+  "title": "Séítah, the sand the rover avoided",
+  "tags": "seitah sand dunes avoided around stuck rover drivers ripple soft loose",
+  "text": "West of the landing site lies Séítah, a patch of sand dunes. Its name is Navajo for 'amidst the sand'. The rover's drivers took the long way around it instead of crossing, because wheels can sink in loose sand. My cost function fears sand for the same reason.",
+  "source": "NASA Mars 2020 mission reports",
+  "ask": "Did the rover avoid sand too?"
+ },
+ {
+  "id": "floor",
+  "title": "The crater floor is volcanic",
+  "tags": "rock bedrock volcanic lava igneous floor maaz stone solid what made of geology",
+  "text": "The rover drilled the crater floor near here and found volcanic rock, cooled lava, not lake mud as many expected. Solid rock like that is the firm ground my route prefers.",
+  "source": "NASA Mars 2020 science results, 2021",
+  "ask": "What is the rock made of?"
+ },
+ {
+  "id": "hirise",
+  "title": "HiRISE, the camera that measured the slopes",
+  "tags": "hirise camera slope slopes height elevation terrain model dtm dem orbiter mro resolution how measured photo image",
+  "text": "The slopes and heights on this map come from HiRISE, a camera on NASA's Mars Reconnaissance Orbiter. Two pictures of the same ground from different angles give a 3D terrain model at 1 metre per pixel. The PHOTO layer is a HiRISE image too.",
+  "source": "MRO HiRISE, University of Arizona; terrain model by USGS Astrogeology",
+  "ask": "How were the slopes measured?"
+ },
+ {
+  "id": "themis",
+  "title": "THEMIS, the night-heat camera",
+  "tags": "themis heat thermal temperature night infrared cold warm sand rock odyssey inertia how tell",
+  "text": "The HEAT layer comes from THEMIS, an infrared camera on NASA's Mars Odyssey orbiter. After sunset, loose sand goes cold quickly while solid rock stays warm. So cold ground at night means soft sand, and warm ground means rock.",
+  "source": "Mars Odyssey THEMIS, Arizona State University; via JPL Mars Trek",
+  "ask": "How do you tell sand from rock?"
+ },
+ {
+  "id": "astar",
+  "title": "How I plan the route",
+  "tags": "astar a* algorithm plan route path green line how compute calculate cost function planner best",
+  "text": "I plan with A*, a search that always expands the cheapest promising step first, so the route it returns is the cheapest one. Each step costs {cell} metres times (1 + 2.5 x (slope / {limit} degrees) squared + 0.6 x sand). Steeper than {limit} degrees cannot be crossed at all.",
+  "source": "A* search (Hart, Nilsson and Raphael, 1968) on this game's cost function",
+  "ask": "How do you plan the route?"
+ },
+ {
+  "id": "impact",
+  "title": "What planning is worth",
+  "tags": "why impact matter worth benefit point saves difference shortest compare route follow line",
+  "text": "On this walk the shortest way crosses {bad0} danger tiles, with a {odds0}% chance of an accident. My planned way crosses {bad1}, with {odds1}%, and burns {save}% less air. Rover drivers plan this way. So will the first crews.",
+  "source": "computed on this board from HiRISE slope and THEMIS data",
+  "ask": "Why follow your route?"
+ },
+ {
+  "id": "proof",
+  "title": "Checked against the real rover",
+  "tags": "proof evidence check validate true real correct accurate trust right rover compare",
+  "text": "The real rover's tiles here average {rslope} degrees of slope, against {bslope} for the whole board, and it never crossed one over my {limit} degree limit. My terrain heights match the heights the rover itself reported to within {dem} metres.",
+  "source": "NASA Mars 2020 traverse vs this game's terrain model",
+  "ask": "How do I know your map is right?"
+ },
+ {
+  "id": "gravity",
+  "title": "Gravity on Mars",
+  "tags": "gravity weight heavy jump light fall g",
+  "text": "Mars pulls with about 38% of Earth's gravity. You feel light, but your suit and tank still have all their mass, so a slip on a steep slope is hard to stop.",
+  "source": "NASA Mars fact sheet",
+  "ask": "What is gravity like here?"
+ },
+ {
+  "id": "air",
+  "title": "Why you cannot breathe here",
+  "tags": "atmosphere breathe carbon dioxide co2 pressure thin air oxygen why suit",
+  "text": "The air here is about 95% carbon dioxide, and its pressure is less than 1% of Earth's. You breathe only what your tank carries. That is why every extra metre matters.",
+  "source": "NASA Mars fact sheet",
+  "ask": "Why can't I breathe here?"
+ },
+ {
+  "id": "sol",
+  "title": "A day on Mars",
+  "tags": "sol day time long hours",
+  "text": "A day on Mars is called a sol. It lasts 24 hours and 39 minutes. The photos you find are dated by the sol of the rover's mission.",
+  "source": "NASA Mars fact sheet",
+  "ask": "What is a sol?"
+ },
+ {
+  "id": "ingenuity",
+  "title": "The helicopter",
+  "tags": "helicopter ingenuity fly flight flew drone",
+  "text": "The rover carried a small helicopter, Ingenuity. On 19 April 2021, close to here, it made the first powered flight on another planet.",
+  "source": "NASA/JPL-Caltech",
+  "ask": "Was there a helicopter?"
+ },
+ {
+  "id": "tilt",
+  "title": "How steep can a rover go",
+  "tags": "steep limit tilt angle rover degrees maximum how much slope climb",
+  "text": "NASA says Perseverance can tilt up to 45 degrees without tipping, but its drivers avoid ground that would tilt it past 30. A person in a heavy suit is less stable, so this game stops you at {limit} degrees. That number is our choice, not NASA's.",
+  "source": "NASA Mars 2020 rover description; limit chosen by the team",
+  "ask": "How steep can a rover go?"
+ },
+ {
+  "id": "photos",
+  "title": "The photos you find",
+  "tags": "photo photos picture image navcam camera see view pieces stop real",
+  "text": "Each ship piece lies where the rover once stopped. When you reach it you see a picture the rover's navigation camera took from that exact stop.",
+  "source": "NASA/JPL-Caltech, Mars 2020 raw images",
+  "ask": "What are the photos I find?"
+ },
+ {
+  "id": "rules",
+  "title": "How the oxygen works",
+  "tags": "rules how play oxygen tank drain burn penalty off line die death game lose win",
+  "text": "Every jump burns air: more on slopes, more on sand. Off my green line each jump costs {pen}% more, and steep or sandy ground can end the walk. A blue tank gives back {refill}%. Bring all three pieces to the ship to win.",
+  "source": "game rules",
+  "ask": "How does the oxygen work?"
+ },
+ {
+  "id": "layers",
+  "title": "Reading the map layers",
+  "tags": "layer layers map read colours color legend photo height slope heat buttons what mean",
+  "text": "MAP is my drawing of the ground. PHOTO is the real picture from orbit. HEIGHT shows low ground in purple and high ground in cream. SLOPE is green where it is flat and red where you cannot pass. HEAT is cold for sand and warm for rock.",
+  "source": "this game",
+  "ask": "How do I read the map layers?"
+ },
+ {
+  "id": "ares",
+  "title": "Who ARES is",
+  "tags": "who are you ares name story yourself alien star ship crash friend",
+  "text": "I am ARES. I was going home to a far star when my ship broke over this crater. I cannot walk far, but I can read the ground. You walk. I plan. Good trade.",
+  "source": "story",
+  "ask": "Who are you?"
+ },
+ {
+  "id": "notdata",
+  "title": "What is not real data",
+  "tags": "fake invented made up not real honest game design assumption guess",
+  "text": "My story, your oxygen tank, the accident odds and the wandering dust devil are game design. The {limit} degree limit and the weights in my cost are the team's choices. The ground itself, slopes, heat, photos and the rover's path, is NASA data.",
+  "source": "project notes",
+  "ask": "What here is not real data?"
+ },
+ {
+  "id": "launch",
+  "title": "The journey here",
+  "tags": "launch launched when journey travel trip earth rocket months arrive mission start",
+  "text": "Perseverance left Earth on 30 July 2020 and landed here on 18 February 2021, after almost seven months in space.",
+  "source": "NASA Mars 2020 mission",
+  "ask": "When did the rover launch?"
+ },
+ {
+  "id": "moxie",
+  "title": "Making oxygen on Mars",
+  "tags": "moxie oxygen make made produce carbon dioxide air breathe experiment mission future crew astronauts",
+  "text": "The rover carried an experiment called MOXIE that made oxygen out of the carbon dioxide air of Mars. Its first run was in April 2021. Future crews will need machines like it, because nobody can carry enough air from Earth.",
+  "source": "NASA/JPL-Caltech, MOXIE experiment",
+  "ask": "Can oxygen be made on Mars?"
+ },
+ {
+  "id": "samples",
+  "title": "The rock samples",
+  "tags": "sample samples tube tubes collect core drill rocks return earth cache mission",
+  "text": "Perseverance drills cores of rock, seals them in metal tubes and keeps them for a later mission to carry back to Earth. Scientists want them in laboratories far stronger than any a rover can hold.",
+  "source": "NASA Mars 2020 mission",
+  "ask": "What does the rover do with rocks?"
+ },
+ {
+  "id": "humans",
+  "title": "Why this matters for people",
+  "tags": "human humans people crew astronaut astronauts future walk marswalk eva explore mission why plan",
+  "text": "A person on Mars walks with a fixed tank of air, far from help. Reading slope and ground from orbit before stepping out, the way this game does, is how a crew would choose a walk that brings everyone home.",
+  "source": "NASA Space Apps 2026 challenge: Interplanetary Survival Guide",
+  "ask": "Why does this matter for astronauts?"
+ }
+]
