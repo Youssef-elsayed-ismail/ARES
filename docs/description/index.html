@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARES — The Mars Survival Map · Project Description · Team Alexstra</title>
+<meta name="description" content="Detailed project description. NASA Space Apps Challenge 2026, Cairo. Challenge: Interplanetary Survival Guide: Martian Map.">
+<meta name="ai-disclosure" content="Screenshots show AI-generated game art, labelled as such. All map data is NASA/USGS data. See section 13.">
+<style>
+  @page { size:A4; margin:15mm 15mm 16mm; }
+  * { box-sizing:border-box; }
+  body { font-family:"Segoe UI", Arial, Helvetica, sans-serif; font-size:9.6pt; line-height:1.42; color:#1c1b1f; margin:0; }
+  h1 { font-size:30pt; margin:0; letter-spacing:.02em; line-height:1.05; } h1 span { color:#c8452c; }
+  h2 { font-size:14pt; color:#c8452c; margin:0 0 6px; padding-bottom:3px; border-bottom:2px solid #c8452c; break-after:avoid; }
+  h3 { font-size:10.6pt; margin:10px 0 3px; color:#2a2630; break-after:avoid; }
+  p { margin:0 0 6px; } ul, ol { margin:0 0 6px; padding-left:17px; } li { margin:0 0 2.5px; }
+  section { break-before:auto; margin-top:16px; } section.first { break-before:page; margin-top:0; }
+  table { border-collapse:collapse; width:100%; margin:4px 0 8px; font-size:8.7pt; break-inside:avoid; }
+  th { background:#2a2630; color:#fff; text-align:left; padding:4px 6px; font-weight:600; } td { padding:3.5px 6px; border-bottom:1px solid #ddd3cf; vertical-align:top; }
+  tr:nth-child(even) td { background:#faf6f4; }
+  code, .f { font-family:Consolas, "Courier New", monospace; font-size:8.6pt; } code { background:#f1eae6; padding:0 3px; border-radius:2px; }
+  .formula { font-family:Consolas, "Courier New", monospace; font-size:9.4pt; background:#f1eae6; border-left:4px solid #c8452c; padding:6px 10px; margin:5px 0 8px; break-inside:avoid; }
+  .lead { font-size:10.6pt; }
+  .cover { display:flex; flex-direction:column; } .cover .figs img { height:36mm; object-fit:cover; }
+  .cover .tag { font-size:13pt; color:#c8452c; font-weight:600; letter-spacing:.14em; margin:6px 0 14px; }
+  .meta { display:grid; grid-template-columns:auto 1fr; gap:3px 14px; font-size:9.6pt; margin:10px 0 12px; } .meta b { color:#555; font-weight:600; }
+  a { color:#1a5fb4; text-decoration:none; word-break:break-all; }
+  .nums { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin:10px 0; }
+  .nums div { border:1px solid #d9cdc8; border-top:4px solid #c8452c; padding:7px 8px; break-inside:avoid; } .nums b { display:block; font-size:17pt; line-height:1.1; color:#c8452c; } .nums span { font-size:8.2pt; color:#444; }
+  .figs { display:grid; gap:7px; margin:6px 0 9px; } .figs.c2 { grid-template-columns:1fr 1fr; } .figs.c3 { grid-template-columns:1fr 1fr 1fr; } .figs.c4 { grid-template-columns:repeat(4, 1fr); }
+  figure { margin:0; break-inside:avoid; } figure img { width:100%; display:block; border:1px solid #b9aeaa; } figcaption { font-size:7.7pt; color:#555; margin-top:2px; line-height:1.3; }
+  .note { background:#fff6e5; border:1px solid #e9c98a; padding:6px 9px; margin:6px 0 8px; font-size:8.9pt; break-inside:avoid; }
+  .pipe { display:grid; grid-template-columns:repeat(5, 1fr); gap:5px; margin:6px 0 10px; font-size:8.1pt; } .pipe div { border:1px solid #c9bdb8; padding:5px 6px; background:#faf6f4; break-inside:avoid; } .pipe b { display:block; color:#c8452c; font-size:8.6pt; margin-bottom:2px; }
+  .toc { columns:2; font-size:9.2pt; margin:8px 0 0; padding:0; list-style:none; } .toc li { margin:0 0 3px; } .toc b { color:#c8452c; display:inline-block; width:1.9em; }
+  footer { margin-top:10px; font-size:8pt; color:#666; border-top:1px solid #ccc; padding-top:5px; }
+  .ok { color:#1a7f37; font-weight:700; } .no { color:#b3261e; font-weight:700; }
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+  <div style="font-size:9pt; letter-spacing:.2em; color:#666; font-weight:600">NASA SPACE APPS CHALLENGE 2026 · CAIRO · PROJECT DESCRIPTION</div>
+  <h1 style="margin-top:10px">ARES <span>— The Mars Survival Map</span></h1>
+  <div class="tag">A PLAYABLE MAP OF JEZERO CRATER, BUILT ON REAL NASA DATA</div>
+
+  <div class="meta">
+    <b>Team</b><span>Alexstra</span>
+    <b>Challenge</b><span>Interplanetary Survival Guide: Martian Map</span>
+    <b>Live project</b><span><a href="https://3zz2004.github.io/ARES-/"><b>https://3zz2004.github.io/ARES-/</b></a> &nbsp;(public, plays in the browser, nothing to install)</span>
+    <b>Demo video (29.5 s)</b><span><a href="https://3zz2004.github.io/ARES-/demo/video.html">https://3zz2004.github.io/ARES-/demo/video.html</a></span>
+    <b>Source code</b><span><a href="https://github.com/3zz2004/ARES-">https://github.com/3zz2004/ARES-</a></span>
+  </div>
+
+  <p class="lead">ARES is a map of a real place on Mars that you walk through as a game. You are an astronaut on foot in Jezero Crater with one tank of oxygen. A stranded companion, ARES, needs three pieces of his ship. Every tile of the board comes from NASA data: how steep it is, whether it is rock or loose sand, how high it is, what it looks like from orbit, and where the Perseverance rover really drove. A route planner draws the cheapest and safest walk. You can follow it, or leave it and pay in oxygen and risk. In fifteen minutes a player learns to read slope and thermal maps the way mission planners do, and sees in numbers what a planned route is worth.</p>
+
+  <div class="nums">
+    <div><b>3</b><span>NASA data types layered on one board: topographic, thermal, optical</span></div>
+    <div><b>1,600</b><span>tiles of 40 m, each with real slope, softness and height</span></div>
+    <div><b>−14.6%</b><span>oxygen on the planned route against the shortest one, at the rover's landing site, for the same distance</span></div>
+    <div><b>0 of 93</b><span>tiles of the real rover's track that our map marks as too steep</span></div>
+  </div>
+
+  <div class="figs c3">
+    <figure><img src="img/shot_2d.jpg"><figcaption>The walk. The green line is the planned route; the white dots are Perseverance's real track.</figcaption></figure>
+    <figure><img src="img/shot_slope.jpg"><figcaption>The same ground as a slope map, from NASA's 1 m terrain model.</figcaption></figure>
+    <figure><img src="img/shot_fp.jpg"><figcaption>The same ground in 3D, seen through the visor.</figcaption></figure>
+  </div>
+
+  <h3 style="margin-top:8px">Contents</h3>
+  <ol class="toc">
+    <li><b>1</b> The problem, and who it is for</li>
+    <li><b>2</b> What we built: every feature</li>
+    <li><b>3</b> How it answers the challenge</li>
+    <li><b>4</b> The NASA data, source by source</li>
+    <li><b>5</b> The data pipeline, step by step</li>
+    <li><b>6</b> The model: cost, risk and oxygen</li>
+    <li><b>7</b> Route planning</li>
+    <li><b>8</b> ARES, the companion that answers from data</li>
+    <li><b>9</b> How the game is built</li>
+    <li><b>10</b> Validation and testing</li>
+    <li><b>11</b> Impact: results site by site</li>
+    <li><b>12</b> What is not data, and the limits</li>
+    <li><b>13</b> How the team worked, and the use of AI</li>
+    <li><b>14</b> What comes next</li>
+    <li><b>15</b> Technology, repository, how to run it</li>
+    <li><b>16</b> Data, references and credits</li>
+  </ol>
+
+  <footer>Screenshots in this document show the game's art, which is AI-generated and labelled as such on screen. All terrain, thermal, image and rover data is NASA / USGS data. NASA does not endorse this project.</footer>
+</div>
+
+<!-- ======================= 1 ======================= -->
+<section class="first">
+<h2>1 · The problem, and who it is for</h2>
+<p>The first people to walk on Mars will do it with a fixed amount of air. On foot, in a heavy suit, a slope or a patch of loose sand is not an inconvenience. It costs oxygen, and it can end the walk. The shortest line between two points on a picture of the ground says nothing about either.</p>
+<p>The data that does say it already exists. NASA has mapped Jezero Crater from orbit down to one metre per pixel, measured how fast its ground cools at night, and driven a rover across it. But the existing tools, such as Mars Trek and the USGS geologic maps, are regional viewers made for specialists. The challenge names the gap: a <b>hyper-local, layered view of one route</b> that an astronaut could actually use.</p>
+<p><b>Our question:</b> can one small piece of Mars be turned into something anyone can read well enough to choose a route that keeps them alive?</p>
+<h3>Who it is for, and what each gets</h3>
+<table>
+<tr><th style="width:24%">For whom</th><th style="width:38%">What they get from it</th><th>What in the project is made for them</th></tr>
+<tr><td><b>Children and school students</b><br>from about age 10</td><td>A first meeting with real space data, as play. They learn that a map can show more than a picture: how steep the ground is, and whether it is rock or sand, and that these decide whether you get home.</td><td>A story with a character to help. One rule to start with: follow the green line. Short sentences, big buttons, touch controls, no reading of numbers needed on EASY. ARES explains the ground in plain words as you step on it.</td></tr>
+<tr><td><b>Older students and the public</b></td><td>The actual skill: reading a slope map and a thermal map to plan a traverse, with the same data products a mission team uses.</td><td>The five switchable layers, HARD level with no route, the ship computer with the measured ground data, and the rover's real track to compare against.</td></tr>
+<tr><td><b>Teachers, museums, outreach teams</b></td><td>A ready activity of about fifteen minutes that needs no preparation.</td><td>Runs in any browser, on a phone, with nothing to install and no account. A "How it works" page with the sources and the formula.</td></tr>
+<tr><td><b>People designing astronaut-facing maps</b></td><td>A working example of the whole chain.</td><td>How to turn orbital products into one hazard number per step, how to check it against a real traverse, and how to show it to someone who is not a geologist.</td></tr>
+</table>
+<p>The first row is the one the look of the project is built around: pixel art, a companion, a rescue. The data underneath is the same for every row. A child and a graduate student walk the same ground with the same numbers; they just use different amounts of what is on the screen.</p>
+</section>
+
+<!-- ======================= 2 ======================= -->
+<section class="flow">
+<h2>2 · What we built: every feature</h2>
+<p>Everything below works now, in the public build. Nothing in this section is a mock-up or a plan.</p>
+<table>
+<tr><th style="width:23%">Feature</th><th>What it does</th></tr>
+<tr><td><b>The board</b></td><td>A 1.60 km × 1.52 km window of Jezero Crater centred on Perseverance's landing site (18.4447° N, 77.4508° E), as 40 × 40 tiles of 40 m. Each tile carries a real slope, ground softness and elevation.</td></tr>
+<tr><td><b>The walk</b></td><td>Move tile by tile (arrows, WASD, or touch). Each step burns oxygen according to the ground. Tiles steeper than 15° are walls. Dangerous tiles carry a chance of an accident. Recover three ship pieces and return before the tank is empty.</td></tr>
+<tr><td><b>Five map layers</b></td><td>MAP (game art), PHOTO (the real HiRISE image), HEIGHT, SLOPE and HEAT. Switch at any moment with keys 1 to 5 or the buttons; the route and the pieces stay drawn on top.</td></tr>
+<tr><td><b>The planned route</b></td><td>A green line from the wreck through all three pieces and back, found by A* over the real terrain (section 7). Press SPACE and ARES leads you along it.</td></tr>
+<tr><td><b>The real rover</b></td><td>Perseverance's actual drive is drawn as white dots (816 points, sols 14 to 386), with the rover parked where it landed.</td></tr>
+<tr><td><b>Real photos</b></td><td>At the rover's site each piece lies at a real rover stop; reaching it shows the Navcam photo Perseverance took there, with sol and date. At unvisited sites it shows NASA's HiRISE close-up of that exact tile.</td></tr>
+<tr><td><b>Four landing sites</b></td><td>The rover's own site, and three sites on ground no rover has reached, chosen by a screening tool (section 5).</td></tr>
+<tr><td><b>Three levels</b></td><td>EASY: route shown, generous tank. NORMAL: route shown, tight tank, pieces move each run at the rover's site. HARD: no route; you read SLOPE and HEAT and plan it yourself.</td></tr>
+<tr><td><b>ARES</b></td><td>A companion who answers questions about the ground, the route, the data and the mission. He computes or retrieves every answer and names its source. He has no language model and refuses what he does not know (section 8).</td></tr>
+<tr><td><b>2D and 3D</b></td><td>One key switches between the top-down map and a 3D terrain built from the same height data, with third-person and first-person cameras.</td></tr>
+<tr><td><b>Labels on the map</b></td><td>Named labels beside the route, the rover track, pieces, air tanks and the wreck, placed so that none covers another.</td></tr>
+<tr><td><b>Ship computer</b></td><td>At the wreck, a retro desktop with four folders: every NASA image of the site, the four orbital maps, ground data measured live from the layers, and the log of this walk.</td></tr>
+<tr><td><b>Live impact panel</b></td><td>For every walk the side panel shows what the planned route saves against the shortest one: oxygen, dangerous tiles crossed, and accident odds. The numbers are computed for that walk, not typed in.</td></tr>
+<tr><td><b>Debrief and score</b></td><td>At the end: which path you took, oxygen left, distance, steepest slope crossed, jumps off the route, score, and best score per level.</td></tr>
+<tr><td><b>Menu and settings</b></td><td>Main menu (Play, How it works, Watch the intro, The story, Settings, Data &amp; credits). Settings are remembered: sound, full screen, start in 3D, labels, rover track, reset.</td></tr>
+<tr><td><b>Opening story</b></td><td>A 35-second animated sequence drawn by code, timed to its music, then a 26-second walk-through of the game recorded from the game itself. Both can be skipped.</td></tr>
+<tr><td><b>Phones and tablets</b></td><td>Held upright, the map sits on top with touch buttons under it. Menus and the ship computer fill the screen.</td></tr>
+<tr><td><b>Loader</b></td><td>A power bar that fills as each data file and image arrives, so a slow connection shows progress instead of a blank page.</td></tr>
+</table>
+
+<div class="figs c3">
+  <figure><img src="img/labels.jpg"><figcaption>Whole-map briefing with labels. The placement code keeps every label clear of the others.</figcaption></figure>
+  <figure><img src="img/computer.jpg"><figcaption>The ship computer: six real Navcam photos of this site, each marked with the piece that lies there.</figcaption></figure>
+  <figure><img src="img/computer_data.jpg"><figcaption>Its GROUND DATA folder: values measured live from the NASA layers in the browser.</figcaption></figure>
+</div>
+<div class="figs c4">
+  <figure><img src="img/menu.jpg"><figcaption>Main menu, over NASA's own image of the crater.</figcaption></figure>
+  <figure><img src="img/menu_play.jpg"><figcaption>Choosing a landing site and a level.</figcaption></figure>
+  <figure><img src="img/shot_3d.jpg"><figcaption>3D, third person.</figcaption></figure>
+  <figure><img src="img/loader.jpg"><figcaption>The loader.</figcaption></figure>
+</div>
+</section>
+
+<!-- ======================= 3 ======================= -->
+<section>
+<h2>3 · How it answers the challenge</h2>
+<p>The challenge asks for a layered, integrated, hyper-local view of a location or route, combining data from several NASA missions, that an astronaut could use on a surface excursion. This table goes through its objectives and optional considerations one by one.</p>
+<table>
+<tr><th style="width:27%">The challenge asks for</th><th style="width:8%">Done</th><th>What we did</th></tr>
+<tr><td>A location and goals</td><td class="ok">Yes</td><td>Jezero Crater, the area around Perseverance's landing site. The targets of each walk at that site are real places where the rover stopped and took a photograph.</td></tr>
+<tr><td>At least three types of data, layered</td><td class="ok">Yes</td><td><b>Topographic</b> (HiRISE terrain model, 1 m), <b>thermal</b> (THEMIS night infrared), <b>optical</b> (HiRISE orthoimage, 25 cm). Plus two kinds of ground truth: the rover's localisation track and its Navcam images. All five are aligned on one board and can be switched in place.</td></tr>
+<tr><td>Data from more than one mission</td><td class="ok">Yes</td><td>Mars Reconnaissance Orbiter (HiRISE), Mars Odyssey (THEMIS), Mars 2020 Perseverance (localisation, Navcam).</td></tr>
+<tr><td>Safety first: terrain hazards</td><td class="ok">Yes</td><td>Slope walls over 15°, a per-tile accident risk from slope and loose sand, and a warning each time the player steps onto bad ground, with the slope and surface named.</td></tr>
+<tr><td>Safety first: suit mobility</td><td class="ok">Yes</td><td>The 15° limit and the oxygen cost of slope and soft ground stand for the limits of a person in a suit. These weights are our own choices and are stated as such (section 12).</td></tr>
+<tr><td>Safety first: radiation, space weather</td><td class="no">No</td><td>Left out on purpose. An early build had a radiation layer that was not backed by a real site-level dataset. We removed it rather than show an invented one.</td></tr>
+<tr><td>A route to the targets that avoids obstacles</td><td class="ok">Yes</td><td>A* over the tile grid with a cost made from slope and softness, a tour through all three targets and back, redrawn if the player leaves it. Proven cheapest by an independent check (section 10).</td></tr>
+<tr><td>Optional: form factor</td><td class="ok">Yes</td><td>A web app that works on a laptop, a tablet and a phone, with touch controls. A first-person 3D view shows the ground as from a helmet.</td></tr>
+<tr><td>Optional: rover point-of-view images</td><td class="ok">Yes</td><td>Six real Navcam frames taken on this board, shown where they were taken, and all six browsable in the ship computer.</td></tr>
+<tr><td>Optional: a generator for other places</td><td class="ok">Partly</td><td>The pipeline takes a latitude, longitude and window size. Any window inside the Jezero HiRISE mosaic rebuilds with three commands. Another region needs that region's terrain model address. We built and tested one window.</td></tr>
+<tr><td>Optional: time frame</td><td class="ok">Yes</td><td>Timeless products (topography, thermal behaviour of the ground), plus a dated record of where the rover was on each sol.</td></tr>
+</table>
+<div class="note"><b>On the resources listed with the challenge.</b> We used JPL Mars Trek (imagery and thermal tiles) and the Perseverance raw image archive. NASA Worldview covers Earth only and does not apply. The USGS geologic maps and the Curiosity route example informed the design but are not loaded as data.</div>
+</section>
+
+<!-- ======================= 4 ======================= -->
+<section class="flow">
+<h2>4 · The NASA data, source by source</h2>
+<table>
+<tr><th style="width:21%">Dataset</th><th style="width:19%">Mission · provider</th><th style="width:13%">Resolution</th><th>What it becomes in the game</th></tr>
+<tr><td><b>HiRISE Digital Terrain Model of Jezero</b><br><span class="f">JEZ_hirise_soc_006_DTM_ MOLAtopography_DeltaGeoid_ 1m_Eqc_latTs0_lon0_blend40</span></td><td>Mars Reconnaissance Orbiter · USGS Astrogeology (Mars 2020 Terrain Relative Navigation products)</td><td>1 m per pixel</td><td>Slope of every tile, walls, elevation, the HEIGHT and SLOPE layers, the hillshade, craters and ledges in the art, and the mesh of the 3D view.</td></tr>
+<tr><td><b>THEMIS Night IR controlled mosaic</b><br><span class="f">THEMIS_NightIR_ ControlledMosaics_100m_v2</span></td><td>Mars Odyssey · Arizona State University, through JPL Mars Trek</td><td>100 m per pixel</td><td>Ground softness: ground that is dark (cold) at night has low thermal inertia, which means loose sand or dust; bright ground is rock. Drives oxygen cost, risk, the HEAT layer and which texture is painted.</td></tr>
+<tr><td><b>HiRISE orthomosaic of Jezero</b><br><span class="f">JEZ_hirise_soc_006_ orthoMosaic_25cm</span></td><td>Mars Reconnaissance Orbiter · University of Arizona, through JPL Mars Trek</td><td>25 cm per pixel</td><td>The PHOTO layer, the colours of the board, the menu background, and the close-up shown at each piece on unvisited ground (160 m squares).</td></tr>
+<tr><td><b>Mars 2020 localisation</b><br><span class="f">M20_waypoints.json, M20_traverse.json</span></td><td>Perseverance · NASA/JPL-Caltech</td><td>per drive</td><td>The rover's real path on the board, the stops used as targets, the definition of "unvisited" ground, and the whole validation in section 10.</td></tr>
+<tr><td><b>Mars 2020 raw images, Navcam</b></td><td>Perseverance · NASA/JPL-Caltech</td><td>per frame</td><td>The photograph shown at each rover stop, with its sol, date and NASA image identifier.</td></tr>
+</table>
+<h3>How NASA data contributes, in one sentence each</h3>
+<ul>
+  <li><b>Without the terrain model there is no game.</b> It is the source of every wall, every slope cost and the whole 3D view.</li>
+  <li><b>Without THEMIS the route would cross sand.</b> Slope alone cannot tell a flat dune field from flat bedrock; the night-time temperature can.</li>
+  <li><b>Without the rover's track we could not claim the map is right.</b> It is the only independent ground truth available, and we use it as a test, not as decoration.</li>
+</ul>
+<div class="figs c4">
+  <figure><img src="img/photo_layer.jpg"><figcaption>PHOTO: HiRISE orthoimage of the window, reduced to the board's grid.</figcaption></figure>
+  <figure><img src="img/shot_height.jpg"><figcaption>HEIGHT: terrain model, with contours.</figcaption></figure>
+  <figure><img src="img/shot_heat.jpg"><figcaption>HEAT: THEMIS night infrared.</figcaption></figure>
+  <figure><img src="img/navcam.jpg"><figcaption>A real Navcam frame from sol 239, shown at the tile where it was taken. NASA/JPL-Caltech.</figcaption></figure>
+</div>
+</section>
+
+<!-- ======================= 5 ======================= -->
+<section>
+<h2>5 · The data pipeline, step by step</h2>
+<p>Eight Python scripts in <code>tools/</code> (758 lines) turn NASA's products into the files the game loads. They ran at build time; their outputs are committed, so the game needs no server. The whole board can be rebuilt from NASA's servers with three commands.</p>
+<div class="pipe">
+  <div><b>1 · Fetch</b>Read only our window of the 1 m terrain model by HTTP range requests.</div>
+  <div><b>2 · Measure</b>Slope from the heights. Softness from THEMIS. One value per tile.</div>
+  <div><b>3 · Ground truth</b>Clip the rover's track to the board. Pick stops and their photos.</div>
+  <div><b>4 · Sites</b>Find ground no rover reached. Screen it like a landing site.</div>
+  <div><b>5 · Pack</b>Write JSON, map images and a binary heightmap for the browser.</div>
+</div>
+
+<h3>Step 1 — the terrain window (<code>fetch_dem_window.py</code>, 133 lines)</h3>
+<ul>
+  <li>The terrain model is one very large GeoTIFF. On the advice of a faculty member at the university that the data can be used without downloading it whole, we built the tool that way: it reads the file's header, works out which strips cover our window, and requests <b>only those byte ranges</b> over HTTP, six in parallel, with retries.</li>
+  <li>Window: 1,600 m north to south. Because the projection stretches east–west distances away from the equator, the same 1,600 projected metres are <b>1,517.8 m on the ground</b> at 18.44° N. We keep both numbers and use the ground distance.</li>
+  <li>Output: a 400 × 400 grid of heights at 4 m spacing, and a slope grid.</li>
+  <li><b>A correction we had to make:</b> slope is the gradient of height over distance. In this projection a pixel is narrower on the ground east–west than north–south, so the east–west gradient is divided by cos(latitude). Without it every east- or west-facing slope came out too gentle.</li>
+</ul>
+
+<h3>Step 2 — one number per tile (<code>build_tiles.py</code>, 122 lines; <code>build_layers.py</code>, 100 lines)</h3>
+<ul>
+  <li>Each 40 m tile holds a 10 × 10 block of 4 m cells. Its <b>slope is the 90th percentile</b> of those hundred slopes, not the average: a tile that is flat except for one ledge still has a ledge you must cross.</li>
+  <li><b>Softness</b> = 1 − THEMIS night brightness, normalised inside the window (0 = the warmest, rockiest tile; 1 = the coldest, sandiest). It is a relative measure, not a calibrated temperature.</li>
+  <li><b>Elevation</b> = the mean height of the tile. The board spans −2,591 m to −2,545 m: 46 m of real relief.</li>
+  <li>Map tiles for THEMIS and HiRISE imagery come from the Mars Trek tile service; the script computes which tiles cover the window at each zoom level and fetches only those.</li>
+  <li>Outputs: <code>board.json</code> (1,600 values each of slope, softness, elevation), the PHOTO image, three clean data maps (hypsometric height with 5 m contours, slope, heat, each shaded by the real relief), and <code>height.bin</code>, a 200 × 200 grid of 16-bit heights for the 3D view.</li>
+</ul>
+
+<h3>Step 3 — the rover as ground truth (<code>build_rover.py</code>, 104 lines)</h3>
+<ul>
+  <li>Reads NASA's published localisation for Mars 2020 and converts longitude and latitude to board coordinates.</li>
+  <li>Keeps the part of the drive that falls on our board: <b>816 track points, 85 waypoints, sols 14 to 386</b>, crossing <b>93 of the 1,600 tiles</b>.</li>
+  <li>For each chosen stop it asks NASA's raw image service for Navcam frames from that site and drive, and keeps one where the mast was looking at the horizon rather than at the rover's own deck (mast elevation between −28° and +6°). Six stops are used.</li>
+  <li>Computes the statistics in section 10 and writes them into <code>rover.json</code>, so the game shows measured numbers.</li>
+</ul>
+
+<h3>Step 4 — landing sites nobody has reached (<code>build_sites.py</code>, 88 lines)</h3>
+<ul>
+  <li>"Unvisited" is measured, not judged: a tile is unvisited if it lies <b>more than 200 m from every point of the rover's track</b>. That is <b>60.8% of the board</b>.</li>
+  <li>Sites are screened the way real landing sites are: slope under 5°, firm ground, room around them, and reachable from the pieces. Three were chosen (table).</li>
+  <li>Each site gets three pieces on unvisited ground of different kinds (solid rock, gravel, high ground), and a 160 m HiRISE close-up of each piece's tile at the mosaic's finest zoom.</li>
+</ul>
+<table>
+<tr><th>Site</th><th>Ground under it</th><th>Nearest rover track</th><th>Board position</th></tr>
+<tr><td>Octavia E. Butler Landing</td><td>the rover's own landing site</td><td>0 m</td><td>tile (20, 20)</td></tr>
+<tr><td>Unvisited site A — north, middle ground</td><td>3.8° slope, firm</td><td>421 m</td><td>tile (16, 6)</td></tr>
+<tr><td>Unvisited site B — west, high ground</td><td>2.9° slope, firm</td><td>299 m</td><td>tile (11, 22)</td></tr>
+<tr><td>Unvisited site C — north-west, high ground</td><td>3.1° slope, firm</td><td>326 m</td><td>tile (13, 14)</td></tr>
+</table>
+
+<h3>Step 5 — art preparation (<code>slice_sheet.py</code>, <code>slice_textures.py</code>, <code>mark_ai_art.py</code>; 211 lines)</h3>
+<ul>
+  <li>Cuts generated character sheets into clean sprite atlases: removes the background by flood fill from the border, finds each pose, drops stray bits, anchors every frame at the feet. 7 animations for the astronaut, 9 for ARES.</li>
+  <li>Makes six ground textures tile without a visible seam, by cross-fading each with a half-offset copy of itself.</li>
+  <li>Marks every AI image: a banner on each source sheet, a text record inside each of 51 PNG files, and removal of a NASA wordmark and flag the generator had drawn.</li>
+</ul>
+</section>
+
+<!-- ======================= 6 ======================= -->
+<section>
+<h2>6 · The model: cost, risk and oxygen</h2>
+<p>One small model turns the data into consequences. It is the same model for the planner, for the oxygen gauge and for the warnings, so the route ARES draws is cheapest in exactly the currency the player pays in.</p>
+<h3>Cost of a step</h3>
+<div class="formula">cost(step onto a tile) = 40 m × ( 1 + 2.5 × (slope / 15°)² + 0.6 × softness )</div>
+<ul>
+  <li>Flat, firm ground costs 40: one tile's length. The worst passable tile (15°, pure sand) costs 40 × 4.1 = 164.</li>
+  <li>Slope is squared because effort on a slope grows faster than the angle.</li>
+  <li><b>Above 15° a tile cannot be entered.</b> 17 of 1,600 tiles are walls; the steepest is 19.6°.</li>
+</ul>
+<h3>Risk of an accident on a step</h3>
+<div class="formula">r = 0.004 + 0.06 × (slope / 15°)² + 0.02 × softness &nbsp;&nbsp;&nbsp; (treated as 0 when below 0.02)</div>
+<ul>
+  <li>Easy ground is never fatal. From 2% the risk is real, up to 8% on the worst passable tile. 931 tiles carry some risk, 652 are safe, 17 are walls.</li>
+  <li>The accident odds for a whole path are 1 − ∏(1 − r) over its steps. This is the figure shown in the impact panel.</li>
+</ul>
+<h3>Oxygen</h3>
+<table>
+<tr><th style="width:30%">Rule</th><th>Value</th></tr>
+<tr><td>Tank size</td><td>The cost of the cheapest possible tour for that walk × a margin: 1.7 on EASY, 1.4 on NORMAL, 1.5 on HARD. So the tank always fits the walk, and a tight level is tight for a reason.</td></tr>
+<tr><td>Walking</td><td>Each step burns its cost.</td></tr>
+<tr><td>Leaving the route (EASY, NORMAL)</td><td>Steps off the green line burn 40% more, and the tile's accident risk applies.</td></tr>
+<tr><td>Standing still</td><td>Life support alone empties a full tank in 12 minutes.</td></tr>
+<tr><td>Spare tanks</td><td>Four on the board, each refilling 25%. They lie on steep or sandy ground, so taking one is a decision.</td></tr>
+<tr><td>Ship computer open</td><td>Oxygen is paused.</td></tr>
+</table>
+<h3>Score</h3>
+<div class="formula">home: ( pieces × 100 + share of oxygen left × 300 + air tanks collected × 30 ) × level bonus (1, 1.5, 2.5) &nbsp;&nbsp;·&nbsp;&nbsp; not home: pieces × 50</div>
+<div class="note"><b>What in this model is ours.</b> The slope and softness values are NASA's. The 15° limit, the weights 2.5 and 0.6, the risk numbers, the tank and the score are design choices made by the team so that the data has consequences a player can feel. They are not NASA figures, and the game says so on its "How it works" page.</div>
+</section>
+
+<!-- ======================= 7 ======================= -->
+<section class="flow">
+<h2>7 · Route planning</h2>
+<ul>
+  <li><b>Algorithm.</b> A* on the tile grid, four directions, in <code>game/astar.js</code> (91 lines, written for this project, no library).</li>
+  <li><b>Open set.</b> A binary min-heap keyed by f = g + h.</li>
+  <li><b>Heuristic.</b> Remaining Manhattan distance × 40 m × the cheapest possible multiplier. It never overestimates, so the path returned is the cheapest one that exists.</li>
+  <li><b>The tour.</b> A walk visits three pieces and returns. The planner computes every leg with A*, caches them, and tries all 3! = 6 orders, keeping the cheapest total.</li>
+  <li><b>Replanning.</b> If the player steps off the line and rejoins it somewhere else, the route is recomputed from where they stand.</li>
+  <li><b>The comparison route.</b> For the impact panel the same planner is run with every step costing the same. That is the shortest way a person would draw on a photo.</li>
+  <li><b>Spoken directions.</b> When asked the way, ARES does not point along a straight line. He reads the turns off the real path: "5 up, then 1 right, then 1 up, then 1 right, then 2 more turns. 12 jumps in all." Following them word for word reaches the target; we tested this by completing HARD using only his directions.</li>
+</ul>
+</section>
+
+<!-- ======================= 8 ======================= -->
+<section>
+<h2>8 · ARES, the companion that answers from data</h2>
+<p>ARES is how a player asks the map a question. The team set one rule for him: <b>he may speak only from NASA data and the mission, he must name his source, and he must not guess.</b> So there is no language model inside the game. Every answer is either computed or looked up. The code is <code>game/ares.js</code> (69 lines) and the answer logic in <code>game/main.js</code>.</p>
+<p>A question passes through four stages, in order:</p>
+<table>
+<tr><th style="width:17%">Stage</th><th style="width:38%">What it does</th><th>A real answer from the game</th></tr>
+<tr><td><b>1 · Navigation</b></td><td>Runs A* from the player's tile and reads the turns off the path. Adds the oxygen it will cost and what the target lies on.</td><td><i>"Where is the next piece?"</i> — Fuel cell: 5 up, then 1 right, then 1 up, then 1 right, then 2 more turns. 12 jumps in all. It costs 9% air. It lies on gravel, where the rover stopped on sol 380.</td></tr>
+<tr><td><b>2 · State</b></td><td>Oxygen against the cheapest way to finish from here; the slope, surface, height and risk of the tile underfoot and its four neighbours.</td><td><i>"Is it safe around me?"</i> — You stand on 1.8° gravel, at −2570 m. up: 2° gravel, safe. down: 3° gravel, safe. left: 4° gravel, safe. right: 2° gravel, safe.</td></tr>
+<tr><td><b>3 · Measurement</b></td><td>Measures the whole board live: steepest and flattest tile, highest and lowest ground, share of sand and rock, number of walls and dangerous tiles, how far the rover drove.</td><td><i>"Where is the steepest ground?"</i> — The steepest tile is 19.6°, 1103 m to the north-west. It is a rock wall: nobody crosses that.</td></tr>
+<tr><td><b>4 · Retrieval</b></td><td>Searches a written knowledge base of 24 entries (897 words) about Jezero, the instruments, the planner and the mission, and fills in this board's live numbers.</td><td><i>"How do you tell sand from rock?"</i> — The HEAT layer comes from THEMIS, an infrared camera on NASA's Mars Odyssey orbiter. After sunset, loose sand goes cold quickly while solid rock stays warm...</td></tr>
+<tr><td><b>Otherwise</b></td><td>Refuses.</td><td><i>"Who is the president?"</i> — I do not have that in the data I carry, so I will not guess. Ask me about this ground: the slopes, the heat, the heights, the rover, or the way to go.</td></tr>
+</table>
+<h3>How the retrieval works</h3>
+<ul>
+  <li><b>Ranking.</b> BM25 (k1 = 1.2, b = 0.75), implemented in the project. Each entry is indexed by its title, tags (counted twice) and text, after removing common words and plural endings.</li>
+  <li><b>Threshold.</b> A match scoring under 1.1 is not accepted.</li>
+  <li><b>Subject check.</b> Question-shaping words (who, why, tell, explain...) are not allowed to carry a match on their own. At least half of the subject words of the question must occur in the entry, and a question whose subject words are unknown to the whole knowledge base is refused. This fixed a real fault we found in testing: "who is the president" used to be answered with ARES's own introduction because both contain "who".</li>
+  <li><b>Follow-up questions.</b> After each answer ARES offers the questions whose entries share the most topic words with it.</li>
+  <li><b>Sources.</b> Every answer is shown with its source line, for example "HiRISE terrain model, steepest part of each 40 m tile".</li>
+</ul>
+<div class="note"><b>What this is and is not.</b> It is retrieval plus tools. It is not a chatbot and not generation: ARES cannot say anything that is not computed from the layers or written in the knowledge base. We chose that on purpose, because on a survival map a confident wrong answer is worse than no answer.</div>
+</section>
+
+<!-- ======================= 9 ======================= -->
+<section>
+<h2>9 · How the game is built</h2>
+<p>The game is a static web page: HTML, JavaScript modules and two canvases. There is no build step, no framework, no server and no account. About 1,600 lines of JavaScript in seven modules, 360 lines of HTML and CSS, and one library (three.js, for 3D).</p>
+<table>
+<tr><th style="width:17%">Module</th><th style="width:9%">Lines</th><th>Responsibility</th></tr>
+<tr><td><code>main.js</code></td><td>947</td><td>Game state and loop; movement, oxygen, accidents, pickups; drawing the 2D view and the overlays; labels; ARES's answer logic; ship computer; menu and settings; touch; intro flow; loader.</td></tr>
+<tr><td><code>astar.js</code></td><td>91</td><td>Cost and risk functions, binary heap, A*, tour planner.</td></tr>
+<tr><td><code>ares.js</code></td><td>69</td><td>BM25 index and search, subject check, related questions, turning a path into spoken turns.</td></tr>
+<tr><td><code>tiles.js</code></td><td>117</td><td>Paints the board from data: picks a texture per tile from its slope and softness, blends borders, adds relief shading from the heights, craters where the terrain model has hollows, ledges and rocks on steep tiles.</td></tr>
+<tr><td><code>view3d.js</code></td><td>129</td><td>The 3D view: terrain mesh from <code>height.bin</code>, the painted board as its texture, lit rocks as instanced meshes, characters as billboards, two cameras, projecting map positions to the screen for labels.</td></tr>
+<tr><td><code>cine.js</code></td><td>164</td><td>The opening story: six beats, camera moves, particles, timed sound cues.</td></tr>
+<tr><td><code>audio.js</code></td><td>97</td><td>All sound effects and the in-game music, synthesised in the browser with the Web Audio API.</td></tr>
+</table>
+
+<h3>2D rendering</h3>
+<ul>
+  <li>The board is painted once into an off-screen canvas, then drawn each frame with the camera either following the astronaut (15 tiles across) or showing the whole map.</li>
+  <li>The art is chosen by the data, not placed by hand: sand ripples where THEMIS reads cold, cracked slabs where it reads warm, boulders and ledges where the terrain model is steep.</li>
+  <li>On top: the route, the rover track, pieces and tanks, the characters with animation, dust puffs, a tile flash on landing, a screen shake scaled to the risk of the tile, and a red frame as oxygen runs low.</li>
+</ul>
+
+<h3>3D rendering</h3>
+<ul>
+  <li>A 200 × 200 mesh (8 m posts) from the real heights, exaggerated 3.5× so that 46 m of relief reads on screen. The rules, route and oxygen are unchanged; only the camera differs.</li>
+  <li>Route, labels and markers are drawn on a transparent layer draped over the mesh, so they follow the ground.</li>
+  <li>First person hides the astronaut and looks ahead along the direction of travel.</li>
+</ul>
+
+<h3>Labels that never overlap</h3>
+<ul>
+  <li>Each label tries 32 positions around its anchor (8 directions at 4 distances) and takes the first that is inside the frame, clear of every label already placed, clear of every other marker, and clear of the astronaut and ARES.</li>
+  <li>A label keeps its place from frame to frame while that place stays free, so labels do not jump. If no place is free it is not drawn.</li>
+  <li>Labels grow on small screens, where the canvas is shown at a fraction of its size.</li>
+</ul>
+
+<h3>Sound and the opening story</h3>
+<ul>
+  <li>Effects are synthesised: landing sounds differ for sand, rock and gravel; alarms, the tank refill, ARES's voice tones.</li>
+  <li>The story is scored with a recorded track. We measured the track's loudness over time, found its entry, its fall and its return, cut it to the picture, and <b>moved the beats of the animation onto the beats of the music</b>: the engine blows at 6.0 s as the music comes in, the impact lands at 15.5 s as it falls away, the title appears at 30.4 s as it returns.</li>
+</ul>
+
+<h3>Loading and size</h3>
+<ul>
+  <li>We measured the first build as too heavy for a shared connection and reduced it: the site from 34 MB to 14 MB, and what must arrive before play from about 9 MB to 2.8 MB (256-colour art, re-encoded video).</li>
+  <li>The walk-through video downloads while the story plays, so it starts without a wait.</li>
+  <li>A loader shows real progress: it advances as each file arrives.</li>
+</ul>
+
+<div class="figs c4">
+  <figure><img src="img/mobile.jpg"><figcaption>Phone layout: map, touch controls, then ARES's panel.</figcaption></figure>
+  <figure><img src="img/mobile_computer.jpg"><figcaption>Ship computer on a phone.</figcaption></figure>
+  <figure><img src="img/story_engine.jpg"><figcaption>Opening story: the engine fails and a piece tears away.</figcaption></figure>
+  <figure><img src="img/story_meet.jpg"><figcaption>Opening story: someone arrives.</figcaption></figure>
+</div>
+</section>
+
+<!-- ======================= 10 ======================= -->
+<section>
+<h2>10 · Validation and testing</h2>
+<p>A map that decides whether a walk is safe has to be checked against something that is not itself. We ran five kinds of checks.</p>
+
+<h3>10.1 The map against the real rover</h3>
+<p>Perseverance's drivers chose its route with NASA's own hazard analysis. If our tiles mean anything, the rover's track should sit on ground our map calls gentle. <code>build_rover.py</code> measures it, and we recomputed the same figures independently in the browser from the raw layers.</p>
+<table>
+<tr><th style="width:44%">Check</th><th style="width:28%">Under the rover (93 tiles)</th><th>Whole board (1,600 tiles)</th></tr>
+<tr><td>Average slope</td><td><b>4.2°</b></td><td>6.1°</td></tr>
+<tr><td>Tiles steeper than 10°</td><td><b>5.4%</b></td><td>10.1%</td></tr>
+<tr><td>Tiles over our 15° limit</td><td><b>0</b></td><td>17</td></tr>
+<tr><td>Steepest tile</td><td><b>13.4°</b></td><td>19.6°</td></tr>
+<tr><td>Tiles on loose sand</td><td><b>16.1%</b></td><td>20.2%</td></tr>
+<tr><td>Our heights against the rover's own recorded elevations, at 85 stops</td><td colspan="2"><b>mean difference −0.01 m, spread ±0.08 m</b></td></tr>
+</table>
+<p>The real mission drove on the ground our map prefers, never crossed a tile we call a wall, and our heights agree with the rover's to within eight centimetres.</p>
+
+<h3>10.2 The planner against an independent solver</h3>
+<p>To prove the green line is the cheapest tour and not merely a plausible one, we wrote a separate Dijkstra search and a brute-force search over all orders of the three pieces, and compared totals on two sites.</p>
+<table>
+<tr><th>Site</th><th>Game's route cost</th><th>Independent best</th><th>Walls on route</th></tr>
+<tr><td>Rover's landing site</td><td>4,423.57</td><td>4,423.57</td><td>0</td></tr>
+<tr><td>Unvisited site B</td><td>2,691.46</td><td>2,691.46</td><td>0</td></tr>
+</table>
+
+<h3>10.3 Our data against NASA's server today</h3>
+<p>We downloaded NASA's current Mars 2020 waypoint file (708 waypoints) and looked up the six stops the game uses by their site and drive numbers. <b>All six were found, each with the same sol</b> the game shows (sols 127, 200, 239, 380, 383, 384).</p>
+
+<h3>10.4 Playing every case to the end</h3>
+<table>
+<tr><th style="width:36%">Case</th><th>Result</th></tr>
+<tr><td>4 sites × EASY and NORMAL, following the route</td><td>All 8 walks finish with all pieces home (78, 126, 44, 44, 40, 40, 50, 50 steps), three photos shown on each.</td></tr>
+<tr><td>HARD, using only ARES's spoken directions</td><td>Finished: 70 steps, 37 questions asked, 30% oxygen left.</td></tr>
+<tr><td>Walking back and forth until the air ends</td><td>The walk ends at 0% with the "oxygen ran out" debrief.</td></tr>
+<tr><td>Controls</td><td>Five layers, whole-map view, 2D/3D, both cameras, rover track, route, labels, help, sound: all toggle and restore.</td></tr>
+<tr><td>Ship computer</td><td>Four folders; 6 photos, 4 maps, 8 data rows, 5 log rows load; viewer opens and closes; oxygen stays paused while open.</td></tr>
+<tr><td>Settings</td><td>Each setting is saved, applied to the next walk, and restored; reset clears best scores and keeps settings.</td></tr>
+<tr><td>Touch controls</td><td>Move, map, route-follow and computer buttons act as their keys.</td></tr>
+</table>
+
+<h3>10.5 ARES</h3>
+<ul>
+  <li>29 questions about the data and the mission, including all 24 that ARES himself suggests: every one answered, every answer with a source.</li>
+  <li>8 off-topic questions (a president, a currency, a joke, a poem, the weather...): every one refused.</li>
+  <li>5 ways of asking about the ground underfoot: every one answered from the player's own tile.</li>
+</ul>
+
+<h3>10.6 The published site</h3>
+<ul>
+  <li>All 101 files of the site load, with the right file types; the 15 NASA images (6 Navcam, 9 orbital close-ups) load; both videos and the music play; no errors in the browser console.</li>
+  <li>The same build was deployed to a second host and passed the same checks.</li>
+  <li>Layouts were checked in screenshots at desktop (1366 × 768), tablet (820 × 1180) and phone (500 × 1000) sizes.</li>
+</ul>
+<div class="note"><b>What we did not test.</b> The checks above were run in desktop browsers, including at phone and tablet sizes. We did not run a formal test on a range of real phones, and we have not yet put the game in front of children or a class to measure what they learn. The game is in English only. All three are in section 14.</div>
+</section>
+
+<!-- ======================= 11 ======================= -->
+<section>
+<h2>11 · Impact: results site by site</h2>
+<p>For every walk the game runs the planner twice: once with the real cost, once treating all ground as equal, which gives the shortest way. It then compares the two under the same model. These are the figures for the four sites on EASY.</p>
+<table>
+<tr><th style="width:27%">Site</th><th>Distance, both routes</th><th>Oxygen saved</th><th>Dangerous tiles crossed</th><th>Accident odds for the walk</th><th>Steepest tile on the planned route</th></tr>
+<tr><td>Rover's landing site</td><td>3,120 m</td><td><b>14.6%</b></td><td>39 → <b>8</b></td><td>68% → <b>18%</b></td><td>8.2°</td></tr>
+<tr><td>Unvisited site A</td><td>1,760 m</td><td><b>3.4%</b></td><td>22 → <b>15</b></td><td>40% → <b>28%</b></td><td>6.4°</td></tr>
+<tr><td>Unvisited site B</td><td>1,600 m</td><td><b>9.3%</b></td><td>26 → <b>25</b></td><td>57% → <b>48%</b></td><td>13.0°</td></tr>
+<tr><td>Unvisited site C</td><td>2,000 m</td><td><b>4.2%</b></td><td>29 → 30</td><td>54% → <b>50%</b></td><td>9.9°</td></tr>
+</table>
+<h3>What these numbers say</h3>
+<ul>
+  <li><b>The planned route is no longer than the shortest one.</b> On a grid there are many paths of the same length between two points. The planner picks, among them and beyond them, the one over the best ground. At the rover's site that choice alone is worth 14.6% of the oxygen and takes the accident odds from 68% to 18%, for the same 3,120 m.</li>
+  <li><b>The benefit depends on the terrain.</b> Where the ground between targets is uniformly rough, as around site C, there is less to gain, and the cheapest route even crosses one more risky tile than the shortest one because it trades it for lower cost elsewhere. We report that as it is.</li>
+  <li><b>These are results inside our model.</b> The slopes and the sand are measured. The oxygen and the odds follow from weights we chose (section 6). The honest claim is not "15% of an astronaut's oxygen" but "the same distance can cost very differently, and the data tells you which way is which".</li>
+</ul>
+<h3>Why it matters</h3>
+<ul>
+  <li><b>For learning.</b> A player who finishes HARD has read a slope map and a thermal map to plan a traverse. That is a real skill from planetary science, reached without a lecture.</li>
+  <li><b>For trust in data.</b> The game does not ask to be believed. It shows the rover's track on the same map and lets the player see that the real mission went where the data says to go.</li>
+  <li><b>For reuse.</b> The method is general: a terrain model, a thermal mosaic, a cost per step, a check against a real traverse. Any place on Mars with a terrain model can be the next board.</li>
+</ul>
+</section>
+
+<!-- ======================= 12 ======================= -->
+<section class="flow">
+<h2>12 · What is not data, and the limits</h2>
+<p>The team's rule for this project was that nothing should be shown as real that is not. This is the full list of what is ours rather than NASA's, and of what the project cannot do.</p>
+<table>
+<tr><th style="width:30%">Item</th><th>Status</th></tr>
+<tr><td>The story: ARES, the ship, its three pieces</td><td>Fiction, as a reason to walk. The places the pieces lie at are real.</td></tr>
+<tr><td>15° limit; weights 2.5 and 0.6</td><td>Our choices. NASA says Perseverance can tilt far more; a person in a suit is less stable, so we set a stricter line. It is not a NASA figure.</td></tr>
+<tr><td>Accident probabilities, tank size, idle drain, score</td><td>Game design.</td></tr>
+<tr><td>THEMIS as "softness"</td><td>A relative reading inside this window, not a calibrated temperature or a measured grain size.</td></tr>
+<tr><td>THEMIS resolution</td><td>100 m pixels against 40 m tiles: sand and rock boundaries are approximate. On unvisited tiles the HiRISE close-ups show sand ripples on ground THEMIS reads as rock. The game says so in the caption of those images.</td></tr>
+<tr><td>Unvisited sites</td><td>Planned from orbit alone, which is what a first crew would have. There is no rover track there to check the route against.</td></tr>
+<tr><td>Radiation, dust, weather, time of day</td><td>Not modelled.</td></tr>
+<tr><td>3D relief</td><td>Exaggerated 3.5× for legibility. Stated in the README.</td></tr>
+<tr><td>Characters, textures, rocks, objects</td><td>AI-generated art, labelled on screen. The ground they are painted on is chosen by the data.</td></tr>
+<tr><td>The dust devil on the map</td><td>Decoration.</td></tr>
+</table>
+</section>
+
+<!-- ======================= 13 ======================= -->
+<section>
+<h2>13 · How the team worked, and the use of AI</h2>
+<h3>What the team did</h3>
+<ul>
+  <li><b>The idea.</b> We began with a plan for a map viewer comparing two sites. During the hackathon the team changed it to a game with a companion: a survival walk on one site, because a consequence teaches more than a legend.</li>
+  <li><b>The design.</b> The rules, the levels, the oxygen, the choice of Jezero, the idea of landing sites on ground no rover has reached, the ship computer as "the hard drive" holding NASA's images, the main menu and settings, the opening story.</li>
+  <li><b>The decisions about truth.</b> Use the data the challenge provides, and stream it rather than download it whole. Remove the radiation layer because nothing real backed it. Remove an early fog-of-war mechanic because a real crew would already have the orbital data. Require that ARES give directions from the real path after the team found his first directions were wrong. Require that he answer only from NASA data and the mission.</li>
+  <li><b>Direction through play.</b> Every build was played by the team, and the next changes came from that: the first sidebar was rejected as dull, a framed version as cheap; numbered markers were tried and replaced by labels; the first data layers were rejected and rebuilt as clean maps; the first score music did not fit and was replaced, then cut to the picture.</li>
+  <li><b>Art direction.</b> The look of the astronaut and of ARES, the textures, the name, the tagline.</li>
+  <li><b>Testing.</b> The team asked for, and reviewed, the checks in section 10.</li>
+</ul>
+<h3>Where AI was used</h3>
+<p>The Space Apps rules allow AI tools and ask that their use be declared. This is ours in full.</p>
+<table>
+<tr><th style="width:22%">Part</th><th style="width:12%">AI used?</th><th>How, and how it is marked</th></tr>
+<tr><td>Idea and design</td><td class="ok">No</td><td>The team's.</td></tr>
+<tr><td>Code</td><td class="no">Yes</td><td>Written with an AI coding assistant (Claude, by Anthropic) to the team's design, then tested and corrected by the team build by build. Declared in the README, in <code>AI_DISCLOSURE.md</code>, and in a comment and a metadata tag in the game's HTML.</td></tr>
+<tr><td>Characters, textures, rocks, objects</td><td class="no">Yes</td><td>Generated with ChatGPT (OpenAI) image generation to the team's art direction, then cut and placed by our own code. Marked three ways: a visible "AI-generated art" label on the game screen and in the opening story, a banner on every source sheet, and a text record inside each PNG file. No generated image carries a NASA logo, flag or mission identifier; two that the generator drew were removed.</td></tr>
+<tr><td>Terrain, slopes, heat, photos, rover track</td><td class="ok">No</td><td>NASA / USGS data. Nothing generated or altered by AI.</td></tr>
+<tr><td>ARES's answers</td><td class="ok">No</td><td>No language model runs in the game. Computed or retrieved (section 8).</td></tr>
+<tr><td>Sound effects, in-game music</td><td class="ok">No</td><td>Synthesised by code.</td></tr>
+<tr><td>Demo video</td><td class="no">Partly</td><td>The pictures are rendered by code, using the project's real map layers and routes and its AI-generated character art; it carries an "AI-generated visuals" label. The narration is an AI voice (ElevenLabs).</td></tr>
+<tr><td>Music of the opening story</td><td class="ok">No</td><td>A recorded track by a human composer: "Epic Trailer" by nastelbom, from Pixabay.</td></tr>
+</table>
+</section>
+
+<!-- ======================= 14 ======================= -->
+<section class="flow">
+<h2>14 · What comes next</h2>
+<p>Everything in this section is a plan. None of it is built.</p>
+<ul>
+  <li><b>More places.</b> Gale Crater with Curiosity's track as ground truth, and candidate human landing zones.</li>
+  <li><b>More layers.</b> Mineral maps (CRISM) as science targets, and measured surface radiation where a dataset exists for the site.</li>
+  <li><b>A calibrated model.</b> Replace our weights with published figures on the metabolic cost of walking on slopes in a suit.</li>
+  <li><b>Children and classrooms.</b> Arabic alongside English, a teacher's sheet, sessions with children from age 10 and with school classes, and a measure of what they actually learn from it.</li>
+  <li><b>Device testing.</b> A proper pass on real phones and tablets.</li>
+  <li><b>A free-roam mode.</b> Explore the crater without the story.</li>
+</ul>
+</section>
+
+<!-- ======================= 15 ======================= -->
+<section class="flow">
+<h2>15 · Technology, repository, how to run it</h2>
+<table>
+<tr><th style="width:22%">Layer</th><th>What we used</th></tr>
+<tr><td>Game</td><td>JavaScript (ES modules), HTML, CSS, Canvas 2D, WebGL through three.js r160, Web Audio API. No framework, no build step.</td></tr>
+<tr><td>Data tools</td><td>Python 3 with NumPy, SciPy and Pillow.</td></tr>
+<tr><td>Hosting</td><td>GitHub Pages (static files). The same folder deploys unchanged to any static host.</td></tr>
+<tr><td>Version control</td><td>Git and GitHub, more than 30 commits during the hackathon.</td></tr>
+</table>
+<h3>Repository</h3>
+<table>
+<tr><th style="width:22%">Path</th><th>Contents</th></tr>
+<tr><td><code>game/</code></td><td>The website: <code>index.html</code>, seven JavaScript modules, <code>data/</code> (board, rover, sites, knowledge base, maps, heightmap), <code>assets/</code> (art, NASA photos, music, video), <code>lib/</code> (three.js), <code>demo/</code> (demo material and this document).</td></tr>
+<tr><td><code>tools/</code></td><td>The eight Python scripts of section 5.</td></tr>
+<tr><td><code>data/</code></td><td>The terrain window produced by step 1.</td></tr>
+<tr><td><code>art_src/</code></td><td>The generated art sheets, each with its AI banner.</td></tr>
+<tr><td><code>README.md</code>, <code>AI_DISCLOSURE.md</code>, <code>docs/</code></td><td>Documentation and the submission text.</td></tr>
+</table>
+<h3>Run it</h3>
+<div class="formula">python -m http.server 5173 --directory game &nbsp;&nbsp;&nbsp; then open http://localhost:5173</div>
+<h3>Rebuild the data from NASA's servers</h3>
+<div class="formula">python tools/fetch_dem_window.py --out data/jezero_dem.json<br>python tools/build_tiles.py<br>python tools/build_rover.py</div>
+</section>
+
+<!-- ======================= 16 ======================= -->
+<section class="flow">
+<h2>16 · Data, references and credits</h2>
+<h3>NASA data and resources</h3>
+<ul>
+  <li>HiRISE Digital Terrain Model mosaic of Jezero Crater, 1 m/pixel. MRO HiRISE; USGS Astrogeology Science Center, Mars 2020 Terrain Relative Navigation products. <a href="https://planetarymaps.usgs.gov/mosaic/mars2020_trn/HiRISE/">planetarymaps.usgs.gov/mosaic/mars2020_trn/HiRISE/</a></li>
+  <li>HiRISE orthomosaic of Jezero Crater, 25 cm/pixel. NASA/JPL-Caltech/University of Arizona, through JPL Mars Trek. <a href="https://trek.nasa.gov/mars/">trek.nasa.gov/mars/</a></li>
+  <li>THEMIS Night IR controlled mosaic, 100 m/pixel. Mars Odyssey; NASA/JPL-Caltech/Arizona State University, through JPL Mars Trek.</li>
+  <li>Mars 2020 Perseverance localisation: waypoints and traverse. NASA/JPL-Caltech. <a href="https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_waypoints.json">mars.nasa.gov/mmgis-maps/M20/Layers/json/</a></li>
+  <li>Mars 2020 raw images, Navcam. NASA/JPL-Caltech. <a href="https://mars.nasa.gov/mars2020/multimedia/raw-images/">mars.nasa.gov/mars2020/multimedia/raw-images/</a></li>
+</ul>
+<h3>Space agency partner data</h3>
+<p>None used.</p>
+<h3>Other references and tools</h3>
+<ul>
+  <li>Hart, Nilsson and Raphael (1968), "A Formal Basis for the Heuristic Determination of Minimum Cost Paths": the A* algorithm.</li>
+  <li>Robertson and Zaragoza (2009), "The Probabilistic Relevance Framework: BM25 and Beyond": the ranking used by ARES.</li>
+  <li>three.js r160, MIT licence. <a href="https://threejs.org">threejs.org</a></li>
+  <li>Fonts: Chakra Petch and Press Start 2P, SIL Open Font License, from Google Fonts.</li>
+  <li>Python libraries: NumPy, SciPy, Pillow.</li>
+  <li>Music of the opening story: "Epic Trailer" by nastelbom, Pixabay, used under the Pixabay Content License.</li>
+  <li>Claude, by Anthropic: AI coding assistant. ChatGPT, by OpenAI: AI image generation for the game art.</li>
+  <li>GitHub Pages: hosting.</li>
+</ul>
+<p style="margin-top:10px; color:#555">NASA does not endorse this project. This document contains no images, names or voices of anyone under 18.</p>
+</section>
+
+</body>
+</html>

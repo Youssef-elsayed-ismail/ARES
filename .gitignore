@@ -1,0 +1,7 @@
+.claude/
+docs/*.pdf
+data/*.tif
+__pycache__/
+*.pyc
+PLAN.md
+art_src/items_clean.png
