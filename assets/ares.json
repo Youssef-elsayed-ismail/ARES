@@ -1,0 +1,1 @@
+{"cell": [184, 120], "anims": {"idle": {"row": 0, "n": 6}, "down": {"row": 1, "n": 6}, "up": {"row": 2, "n": 6}, "side": {"row": 3, "n": 6}, "talk": {"row": 4, "n": 3}, "happy": {"row": 5, "n": 1}, "alert": {"row": 6, "n": 1}, "sad": {"row": 7, "n": 5}, "cheer": {"row": 8, "n": 4}}}

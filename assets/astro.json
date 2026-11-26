@@ -1,0 +1,1 @@
+{"cell": [242, 249], "anims": {"idle": {"row": 0, "n": 4}, "down": {"row": 1, "n": 6}, "up": {"row": 2, "n": 6}, "side": {"row": 3, "n": 6}, "low": {"row": 4, "n": 4}, "fall": {"row": 5, "n": 5}, "win": {"row": 6, "n": 4}}}
